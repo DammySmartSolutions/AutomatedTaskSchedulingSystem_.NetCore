@@ -1,0 +1,51 @@
+﻿@model List<Position>
+
+
+
+<div class="container-fluid px-4">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mt-4 mb-4">
+        <div>
+            <h4 class="text-primary mb-1">
+                Position List
+            </h4>
+
+        </div>
+
+        <div>
+            <a asp-area="Admin"
+               asp-controller="Position"
+               asp-action="Upsert"
+               class="btn btn-primary">
+                <i class="bi bi-plus-circle me-1"></i>
+                Create New Position
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped align-middle mb-0" id="tblData">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Position ID</th>
+                            <th>Position</th>
+                            <th class="text-center" style="width: 100px;">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts {
+
+    <script src="~/js/Position.js"></script>
+}

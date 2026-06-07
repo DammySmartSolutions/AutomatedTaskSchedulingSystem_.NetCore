@@ -1,0 +1,98 @@
+﻿@model DashboardVM
+
+<h4 class="text-primary mt-4">Dashboard</h4>
+
+<div class="row">
+    <div class="col-xl-4 col-md-6">
+       
+        <div class="card bg-primary text-white mb-4 shadow">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="mb-1">Total Employees</h6>
+                        <h2 id="totalusers">@Model.TotalEmployees</h2>
+                    </div>
+                    <div>
+                        <i class="bi bi-people-fill fs-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-xl-4 col-md-6">
+              <div class="card bg-warning text-white mb-4 shadow">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="mb-1">Total Locations</h6>
+                        <h2 class="mb-0">@Model.TotalLocations</h2>
+                    </div>
+                    <div>
+                        <i class="bi bi-geo-alt-fill fs-1"></i>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    <div class="col-xl-4 col-md-6">
+               <div class="card bg-success text-white mb-4 shadow">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1">Total Tasks</h6>
+                            <h2 class="mb-0">@Model.TotalTasks</h2>
+                        </div>
+                        <div>
+                            <i class="bi bi-list-task fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card mb-4 shadow">
+            <div class="card-header">
+                <i class="bi bi-bar-chart-fill me-1"></i>
+                Employee Availability Today
+            </div>
+            <div class="card-body">
+                <canvas id="availabilityChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+   
+    
+</div>
+
+
+
+@section Scripts {
+    <script>
+        fetch('/Dashboard/GetAvailabilityChart')
+            .then(response => response.json())
+            .then(result => {
+                const ctx = document.getElementById('availabilityChart');
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: result.labels,
+                        datasets: [{
+                            label: 'Employees',
+                            data: result.data
+                        }]
+                    }
+                });
+            });
+    </script>
+}
+
+                       

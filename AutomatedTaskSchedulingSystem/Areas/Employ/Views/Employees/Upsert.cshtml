@@ -1,0 +1,124 @@
+﻿@model EmployeeVM
+
+<div class="card shadow border-0 my-4">
+    <div class="card-header bg-primary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h4 class="text-white py-2"> @(Model.Employee.ID != 0 ? "Update" : "Add") Employee</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+     
+            <div class="row">
+                <div class="col-8">
+                    <form method="post" class="row" enctype="multipart/form-data">
+                    <input asp-for="Employee.ID" hidden />
+                    <div class="border p-3">
+                        @*<div asp-validation-summary="ModelOnly"></div>*@
+                        <div class="form-floating py-2 col-12">
+                            <input asp-for="Employee.EmpID" class="form-control border-0 shadow" placeholder="Employee ID" />
+                            <label asp-for="Employee.EmpID" class="ms-2"></label>
+                            <span asp-validation-for="Employee.EmpID" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating py-2 col-12">
+                            <input asp-for="Employee.FirstName" class="form-control border-0 shadow" placeholder="First Name" />
+                            <label asp-for="Employee.FirstName" class="ms-2"></label>
+                            <span asp-validation-for="Employee.FirstName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating py-2 col-12">
+                            <input asp-for="Employee.LastName" class="form-control border-0 shadow" placeholder="Last Name" />
+                            <label asp-for="Employee.LastName" class="ms-2"></label>
+                            <span asp-validation-for="Employee.LastName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating py-2 col-12">
+                            <select asp-for="@Model.Employee.Sex" class="form-select border-0 shadow">
+                                <option disabled selected>--Select Sex--</option>
+                                <option value="M">M</option>
+                                <option value="F">F</option>
+                            </select>
+                            <label asp-for="Employee.Sex" class="ms-2"></label>
+                            <span asp-validation-for="Employee.Sex" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating py-2 col-12">
+                            <select asp-for="@Model.Employee.PosId" asp-items="@Model.PositionList" class="form-select border-0 shadow">
+                                <option disabled selected>--Select Position--</option>
+                            </select>
+                            <label asp-for="Employee.PosId" class="ms-2"></label>
+                            <span asp-validation-for="Employee.PosId" class="text-danger"></span>
+                        </div>
+
+
+                        
+                        <div class="row pt-2">
+                            <div class="col-6 col-md-3">
+                                @if (Model.Employee.ID != 0)
+                                {
+                                    <button type="submit" class="btn btn-primary form-control">Update</button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-primary form-control">Add</button>
+                                }
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <a asp-controller="Employees" asp-action="Index" class="btn btn-outline-primary border  form-control">
+                                    Back to List
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </form>
+                </div>
+
+                    <div class="col-4">
+                        <div class="border p-3 m-2 text-center">
+
+                            <form asp-area="Employ"
+                                  asp-controller="Employees"
+                                  asp-action="Upload"
+                                  method="post"
+                                  enctype="multipart/form-data">
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Batch Upload</label>
+                                    <input type="file" name="file" class="form-control shadow" accept=".csv" />
+                                </div>
+
+                                <button type="submit" class="btn btn-primary form-control">
+                                    <i class="bi bi-upload me-1"></i> Upload
+                                </button>
+
+                                <a href="~/templates/EmployeeUpload.csv"
+                                   download
+                                   class="link-primary d-block mt-3">
+                                    <i class="bi bi-file-earmark-excel me-2"></i>
+                                    Download Template
+                                </a>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+
+
+      
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

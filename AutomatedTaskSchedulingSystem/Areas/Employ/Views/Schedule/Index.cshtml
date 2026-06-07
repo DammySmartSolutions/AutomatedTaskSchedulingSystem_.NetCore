@@ -1,0 +1,38 @@
+﻿@model GenerateScheduleVM
+
+<div class="card shadow border-0 my-4">
+    <div class="card-header bg-primary bg-gradient py-3">
+        <h4 class="text-white text-center mb-0">Generate Schedule</h4>
+    </div>
+
+    <div class="card-body p-4">
+        <form asp-area="Employ"
+              asp-controller="Schedule"
+              asp-action="Generate"
+              method="post">
+
+            @Html.AntiForgeryToken()
+
+            <div class="py-2 col-12 col-md-6">
+                <label asp-for="ScheduleDate" class="form-label fw-semibold"></label>
+                <input asp-for="ScheduleDate" type="date" class="form-control shadow" />
+                <span asp-validation-for="ScheduleDate" class="text-danger"></span>
+            </div>
+
+            <div class="row pt-3">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-primary form-control">
+                        <i class="bi bi-calendar-plus me-1"></i>
+                        Generate
+                    </button>
+                </div>
+
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

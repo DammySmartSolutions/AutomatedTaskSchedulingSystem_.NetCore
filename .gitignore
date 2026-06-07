@@ -1,0 +1,57 @@
+# Build folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# NuGet
+packages/
+*.nupkg
+
+# ASP.NET Core
+wwwroot/lib/
+
+# Logs
+*.log
+
+# Publish
+publish/
+artifacts/
+
+# Database
+*.mdf
+*.ldf
+
+# SQL Server LocalDB
+App_Data/
+
+# EF Core migration bundles
+efbundle.exe
+
+# Secrets
+appsettings.Development.json
+appsettings.Local.json
+appsettings.json
+# User Secrets
+secrets.json
+
+# Stimulsoft License (if stored separately)
+license.key
+
+# Node
+node_modules/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store

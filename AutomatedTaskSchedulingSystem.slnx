@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+  </Folder>
+  <Project Path="AutomatedTaskSchedulingSystem.DataAccess/AutomatedTaskSchedulingSystem.DataAccess.csproj" />
+  <Project Path="AutomatedTaskSchedulingSystem.Model/AutomatedTaskSchedulingSystem.Models.csproj" />
+  <Project Path="AutomatedTaskSchedulingSystem.Utility/AutomatedTaskSchedulingSystem.Utility.csproj" />
+  <Project Path="AutomatedTaskSchedulingSystem/AutomatedTaskSchedulingSystem.csproj" />
+</Solution>
