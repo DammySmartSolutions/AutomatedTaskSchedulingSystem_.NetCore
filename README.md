@@ -329,7 +329,7 @@ The project follows modern software engineering principles including:
 ![Generate Report](AppImages/GenerateSchedule.png "Generate Schedule")
 *Figure 3: Generate Schedule*
 
-The project follows modern software engineering principles including:
+
 ![Schedule Report](AppImages/ScheduleReport.png "Schedule Report")
 *Figure 4: Schedule Report*
 
