@@ -315,28 +315,31 @@ The project follows modern software engineering principles including:
 
 ---
 
-##  Application Images
+# 📷 Screenshots
 
-
+## Login Page
 ![Login Page](AppImages/LoginPage.png "Login Page")
-*Figure 1: Login Page*
 
+---
+## Dashboard Page
 ![Dashboard](AppImages/Dashboard.png "Dashboard")
-*Figure 2: Dashboard*
 
-
+---
+## Generate Schedule
 
 ![Generate Report](AppImages/GenerateSchedule.png "Generate Schedule")
-*Figure 3: Generate Schedule*
 
+---
 
+## Schedule Report
 ![Schedule Report](AppImages/ScheduleReport.png "Schedule Report")
-*Figure 4: Schedule Report*
+
+---
 
 
-
+## Schedule Report 2
 ![Schedule Report2](AppImages/ScheduleReport2.png "Schedule Report2")
-*Figure 5: Schedule Report2*
+
 
 
 ---
